@@ -4,7 +4,9 @@
 iot-rich-presence thêm tính năng hiển thị bạn đang chơi IOT. Phần mở rộng Chrome là cần thiết để đưa dữ liệu URL về app chính
 
 ## Cài đặt
-Tải về file *.exe và *.zip từ mục Releases. Để cài phần mở rộng Chrome, giải nén file *.zip (dùng lựa chọn Extract to extensions/) sau đó
+Tải về file IOT-discord-presence-win32-x64.zip và extensions.zip từ mục Releases. Giải nén file IOT-discord-presence-win32-x64.zip ở đâu cũng được, sau đó chạy IOT-discord-presence.exe
+
+Để cài phần mở rộng Chrome, giải nén file *.zip (dùng lựa chọn Extract to extensions/) sau đó
 * Vào chrome ://extensions
 * Bật chế độ dành cho nhà phát triển
 * Bấm nút Tải tiện ích đã giải nén
