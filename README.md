@@ -1,6 +1,6 @@
 ## Chung
 
-<img src="https://cdn.discordapp.com/attachments/785144177457102881/812927114063642685/unknown.png" width="20%" />
+<img src="https://cdn.discordapp.com/attachments/785144177457102881/812927114063642685/unknown.png"/>
 iot-rich-presence thêm tính năng hiển thị bạn đang chơi IOT. Phần mở rộng Chrome là cần thiết để đưa dữ liệu URL về app chính
 
 ## Cài đặt
