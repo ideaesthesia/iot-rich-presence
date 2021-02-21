@@ -11,11 +11,20 @@ function updatePresence(tab) {
             var codename = ""
             if (details.toLowerCase() == "compete") {
                 details = "Competing"
-                state = pathArray[2] //The state here is the codename of the competition like VILBA2-011
-                codename = state.replace(/[^a-z]/gi, '').toLowerCase(); //Truncating the state to get only the shortened name of the competition (VILBA), to get the small image keys
-            } else if (details.toLowerCase() == "revise") {
+                if (typeof pathArray[2] != "undefined") {
+					state = pathArray[2]  //The state here is the room number
+				}
+				else { state = "Waiting for a match" }
+				if (state != "Waiting for a match") {
+					codename = state.replace(/[^a-z]/gi, '').toLowerCase()
+				}
+				else {codename = ""}
+			} else if (details.toLowerCase() == "revise") {
                 details = "Revising"
-                state = "Room " + pathArray[3] //The state here is the room number
+                if (typeof pathArray[3] != "undefined") {
+					state = "Room " + pathArray[3]  //The state here is the room number
+				}
+				else { state = "Looking for a room"}
                 codename = "revise"
             } else {
                 details = "Idle"
