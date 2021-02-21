@@ -16,7 +16,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ideaesthesia/iot-discord-presence"
+    "url": "git+https://github.com/ideaesthesia/iot-discord-presence/releases"
   },
   "keywords": [
     "discord"
