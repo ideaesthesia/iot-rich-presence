@@ -69,16 +69,17 @@ setInterval(() => { // on an interval…
         windows.forEach(function(window) {
             window.tabs.forEach(function(tab) {
                 if (tab.highlighted) {
-                    if (tab.id != lastCheckedTabId || !wasFocused) { // if this is different than the tab we got last time, or the browser was not focused last time
-                        updatePresence(tab); // user has switched tabs; update our presence!
-                        lastCheckedTabId = tab.id; // remember the tab we found
-                    }
-                    wasFocused = true; // remember that a window was focused last check
+					var url = new URL(tab.url);
+					if (url.hostname != "iot.chinhphucvn.com") {
+						updatePresence(null);
+					}
+					else {
+                    updatePresence(tab);
+					}
                 } else { // it's not focused; user is not looking at chrome
                     if (wasFocused) { // if it was focused on the last check
                         updatePresence(null); // user has stopped looking at chrome; clear the presence.
                     }
-                    wasFocused = false; // remember that no window was focused last check
                 }
             });
         });
