@@ -7,6 +7,7 @@ const url = require('url');
 const client = new RPC.Client({ transport: 'ipc' });
 client.login({ clientId: '811855112929673246' });
 const iconPath = path.join(__dirname, 'IOTLogo.ico')
+var tray = null
 
 var isQuitting
 
@@ -33,7 +34,6 @@ function createWindow () {
     }
     return false;
   });
-  let tray = null
   tray = new Tray(iconPath)
   const contextMenu = Menu.buildFromTemplate([
 	{ label: 'Show App', click:  function(){

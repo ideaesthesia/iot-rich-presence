@@ -5,16 +5,24 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "Lê Thanh Trúc",
   "license": "Unlicense",
   "dependencies": {
     "discord-rpc": "^3.0.0",
+    "electron-squirrel-startup": "^1.0.0",
     "express": "^4.17.1",
     "systray": "^1.0.5"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "^11.3.0",
     "path": "^0.12.7",
     "url": "^0.11.0"
@@ -29,5 +37,32 @@
   "bugs": {
     "url": "https://github.com/ideaesthesia/iot-discord-presence/issues"
   },
-  "homepage": "https://github.com/ideaesthesia/iot-discord-presence#readme"
+  "homepage": "https://github.com/ideaesthesia/iot-discord-presence#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "IOT_discord_presence"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
 }
